@@ -38,7 +38,7 @@ if __name__ == "__main__":
 EOF
 fi
 
-# Install/upgrade apps.
+# Install apps.
 if [ ! -e /home/${SYSTEM_USER}/apps ] || [ "${AIIDALAB_SETUP}" == "true" ]; then
    echo "Install / upgrade apps..."
 

@@ -106,7 +106,9 @@ RUN conda install --yes -c conda-forge dscribe "tornado<5"
 # Prepare user's folders for AiiDA lab launch.
 COPY opt/aiidalab-singleuser /opt/
 COPY opt/prepare-aiidalab.sh /opt/
+COPY opt/upgrade-aiidalab.sh /opt/
 COPY my_init.d/prepare-aiidalab.sh /etc/my_init.d/80_prepare-aiidalab.sh
+COPY my_init.d/upgrade-aiidalab.sh /etc/my_init.d/90_upgrade-aiidalab.sh
 
 # Copy scripts to start Jupyter notebook.
 COPY opt/start-notebook.sh /opt/
