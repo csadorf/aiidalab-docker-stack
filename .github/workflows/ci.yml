@@ -44,12 +44,15 @@ jobs:
     steps:
 
       - uses: actions/checkout@v2
+        repository: aiidalab/aiidalab-home
 
-      - name: run platform tests
+      - name: Run platform tests
         uses: aiidalab/aiidalab-test-app-action@v2
         with:
           image: ${{ needs.build-docker-image.outputs.image }}
           browser: 'chrome'
+          # By not specifying the app name as "home", we will run
+          # all tests against the already installed home app.
 
   test-apps:
 
@@ -60,6 +63,8 @@ jobs:
     strategy:
       matrix:
         app: [
+            # By not specifying the app name, we run all tests
+            # against the pre-installed apps.
             aiidalab/aiidalab-hello-world,
             aiidalab/aiidalab-widgets-base,
             aiidalab/aiidalab-qe,
