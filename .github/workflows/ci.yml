@@ -50,7 +50,7 @@ jobs:
       # in particular are executed and how to implement new tests for both the aiida
       # lab platform and aiida lab apps.
       - name: Test app
-        uses: aiidalab/aiidalab-test-app-action@fix/issue-001
+        uses: aiidalab/aiidalab-test-app-action@develop
         with:
           image: aiidalab/aiidalab-docker-stack:latest
           browser: ${{ matrix.browser }}
